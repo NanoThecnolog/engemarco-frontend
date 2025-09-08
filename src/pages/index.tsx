@@ -10,6 +10,7 @@ import Services from "@/components/Home/Services";
 import Projects from "@/components/Home/Projects";
 import Customers from "@/components/Home/Customers";
 import Statistics from "@/components/Home/Statistics";
+import Contacts from "@/components/Home/Contact";
 
 export default function Home() {
   const [modalVisible, setModalVisible] = useState<boolean>(false)
@@ -36,13 +37,11 @@ export default function Home() {
 
         <Apresentation />
         <About />
-
         <Statistics />
-
         <Services />
-
         <Projects />
         <Customers />
+        <Contacts />
 
         {
           modalVisible && <ModalHome visible={setModalVisible} />
