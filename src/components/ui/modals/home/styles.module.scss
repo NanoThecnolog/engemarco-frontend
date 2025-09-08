@@ -1,0 +1,68 @@
+.container {
+    position: fixed;
+    //background-color: #85858550;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9;
+
+    .content {
+        width: 50%;
+        background-color: rgb(29, 29, 29);
+        max-width: 900px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: .4rem;
+        position: relative;
+
+        .text {
+            text-align: center;
+            width: 70%;
+
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .buttonContainer {
+            display: flex;
+            justify-items: center;
+            align-items: center;
+            //outline: 2px solid red;
+            place-content: center;
+
+            button {
+                background-color: black;
+                border-radius: .5rem;
+                padding: 10px 15px;
+                text-transform: uppercase;
+                //outline: 2px solid red;
+
+                @media (hover: hover) and (pointer: fine) {
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+
+        .closeButton {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    transform: scale(1.1);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

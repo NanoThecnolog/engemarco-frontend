@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    //outline: 2px solid red;
+    width: 100%;
+
+    .text {
+        text-align: center;
+    }
+
+    .projectsContainer {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        width: 80%;
+        //outline: 2px solid red;
+        gap: 20px;
+
+        .projectItem {
+            text-align: center;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+
+            img {
+                width: 400px;
+            }
+        }
+    }
+}
