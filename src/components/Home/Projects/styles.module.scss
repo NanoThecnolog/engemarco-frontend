@@ -29,4 +29,40 @@
             }
         }
     }
+
+    @media (max-width: 1024px) {
+        .projectsContainer {
+            width: 90%;
+            grid-template-columns: 1fr 1fr; //repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+
+            .projectItem img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .projectsContainer {
+            width: 95%;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+
+            .projectItem img {
+                max-width: 100%;
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        .projectsContainer {
+            width: 100%;
+            grid-template-columns: 1fr;
+            gap: 10px;
+
+            .projectItem img {
+                max-width: 100%;
+            }
+        }
+    }
 }

@@ -33,4 +33,60 @@
             }
         }
     }
+
+    @media (max-width: 1024px) {
+        height: auto;
+        padding: 40px;
+
+        .centralContainer {
+            width: 90%;
+            gap: 15px;
+
+            .item {
+                width: 180px;
+
+                .number {
+                    font-size: 3rem;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        height: auto;
+        padding: 30px;
+
+        .centralContainer {
+            width: 95%;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+
+            .item {
+                width: 100%;
+
+                .number {
+                    font-size: 2.5rem;
+                }
+            }
+        }
+    }
+
+    @media (max-width: 480px) {
+        height: auto;
+        padding: 20px;
+
+        .centralContainer {
+            grid-template-columns: 1fr;
+            width: 100%;
+
+            .item {
+                width: 100%;
+
+                .number {
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
 }
