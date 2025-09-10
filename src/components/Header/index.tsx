@@ -11,10 +11,10 @@ export default function Header() {
 
     const menu: { href: string, text: string }[] = [
         { href: '/', text: 'Início' },
-        { href: '/about', text: 'Quem Somos' },
-        { href: 'projects', text: 'Projetos' },
+        { href: '#about', text: 'Quem Somos' },
+        { href: '#projetos', text: 'Projetos' },
         { href: '/jobs', text: 'Trabalhos' },
-        { href: '/contact', text: 'Contato' }
+        { href: '#contato', text: 'Contato' }
     ]
     return (
         <nav className={styles.navContainer}>

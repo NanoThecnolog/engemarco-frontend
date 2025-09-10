@@ -2,7 +2,7 @@ import styles from './styles.module.scss'
 
 export default function Projects() {
     return (
-        <section className={styles.container}>
+        <section className={styles.container} id='projetos'>
             <div className={styles.text}>
                 <h1>Projetos</h1>
             </div>

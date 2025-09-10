@@ -1,5 +1,8 @@
 import { FormEvent, useState } from 'react'
 import styles from './styles.module.scss'
+import { MdEmail } from 'react-icons/md'
+import { FaPhoneAlt } from 'react-icons/fa'
+import { contact } from '@/common/variables/contact'
 
 export default function Contacts() {
     const [name, setName] = useState<string>('')
@@ -12,12 +15,28 @@ export default function Contacts() {
         return
     }
     return (
-        <section className={styles.container}>
+        <section className={styles.container} id='contato'>
             <div className={styles.title}>
                 <h1>Contato</h1>
             </div>
-            <div>
+            <div className={styles.infoContainer}>
+                <div className={styles.infoText}>
+                    <h3>Para mais informações ou solicitação de orçamentos, preencha o formulário abaixo que logo entraremos em contato.</h3>
+                </div>
+                <div className={styles.contactContainer}>
+                    <div className={styles.contactItem}>
+                        <MdEmail />
+                        <p>{contact.email}</p>
+                    </div>
+                    <div className={styles.contactItem}>
+                        <FaPhoneAlt />
+                        <p>{contact.phone}</p>
+                    </div>
+                </div>
+            </div>
+            <div className={styles.contentContainer}>
                 <form className={styles.formContainer} onSubmit={handleSubmit}>
+                    <h3>Formulário de Contato</h3>
                     <label>
                         <h4>Nome</h4>
                         <input
@@ -54,8 +73,15 @@ export default function Contacts() {
                         <button type='submit'>Enviar</button>
                     </div>
                 </form>
-                <div>
-                    mapa
+                <div className={styles.mapContainer}>
+                    <iframe
+                        src={contact.mapAddress}
+                        width="100%"
+                        height="100%"
+                        loading="lazy"
+                        allowFullScreen
+                        referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                 </div>
             </div>
         </section>
