@@ -64,5 +64,74 @@
                 transform: scale(1.05);
             }
         }
+
+        @media (max-width: 1024px) {
+            .content {
+                max-width: 600px;
+
+                .logomarca img {
+                    max-width: 150px;
+                }
+
+                h1 {
+                    font-size: 2.5rem;
+                }
+
+                p {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            padding: 1.5rem;
+
+            .content {
+                max-width: 100%;
+
+                .logomarca img {
+                    max-width: 120px;
+                }
+
+                h1 {
+                    font-size: 2rem;
+                }
+
+                p {
+                    font-size: 1rem;
+                    line-height: 1.6;
+                }
+
+                .cta {
+                    font-size: 0.95rem;
+                    padding: 0.8rem 1.6rem;
+                }
+            }
+        }
+
+        @media (max-width: 480px) {
+            padding: 1rem;
+
+            .content {
+                .logomarca img {
+                    max-width: 100px;
+                }
+
+                h1 {
+                    font-size: 1.6rem;
+                }
+
+                p {
+                    font-size: 0.9rem;
+                    margin-bottom: 1.5rem;
+                }
+
+                .cta {
+                    font-size: 0.9rem;
+                    padding: 0.7rem 1.4rem;
+                }
+            }
+        }
     }
+
 }
