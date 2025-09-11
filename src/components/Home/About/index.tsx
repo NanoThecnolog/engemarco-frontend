@@ -23,7 +23,7 @@ export default function About() {
                 </p>
             </div>
             <div className={styles.left}>
-
+                <img src="/img/aboutImage.png" alt="" />
             </div>
         </section>
     )
