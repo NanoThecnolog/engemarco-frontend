@@ -63,8 +63,7 @@ export default function Contacts() {
                     </label>
                     <label>
                         <h4>Deixe uma mensagem</h4>
-                        <input
-                            type="textarea"
+                        <textarea
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
                         />
