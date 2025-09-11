@@ -13,7 +13,7 @@ export default function Header() {
         { href: '/', text: 'Início' },
         { href: '#about', text: 'Quem Somos' },
         { href: '#projetos', text: 'Projetos' },
-        { href: '/jobs', text: 'Trabalhos' },
+        //{ href: '/jobs', text: 'Trabalhos' },
         { href: '#contato', text: 'Contato' }
     ]
     return (
