@@ -14,6 +14,9 @@ import Contacts from "@/components/Home/Contact";
 
 export default function Home() {
   const [modalVisible, setModalVisible] = useState<boolean>(false)
+
+  const imgBGParallax = '/img/exemplo1.jpg';
+
   return (
     <>
       <Head>
@@ -23,25 +26,18 @@ export default function Home() {
         <link rel="icon" href="/img/logomarcaredesenhada.png" />
       </Head>
       <main className={styles.container}>
-        {
-          /*engemarco solucoes de engenharia - sessões para fazer
-        <ul>
-          <li>apresentação rápida sobre a empresa</li>
-          <li>serviços prestados</li>
-          <li>métricas sobre a empresa (pericias, obras, satisfação, tempo de experiência, etc)</li>
-          <li>principais projetos</li>
-          <li>clientes</li>
-          <li>formulário de contato com envio direto para o email</li>
-        </ul>*/
-        }
-
-        <Apresentation />
-        <About />
-        <Statistics />
-        <Services />
-        <Projects />
-        <Customers />
-        <Contacts />
+        <div className={styles.bgFixed}>
+          <img src={imgBGParallax} alt="fundo" />
+        </div>
+        <div className={styles.pageContent}>
+          <Apresentation />
+          <About />
+          <Statistics />
+          <Services />
+          <Projects />
+          <Customers />
+          <Contacts />
+        </div>
 
         {
           modalVisible && <ModalHome visible={setModalVisible} />
