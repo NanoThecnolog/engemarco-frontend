@@ -24,4 +24,9 @@ export const projects = [
         image: '/img/projects/pintura-fachada.jpeg',
         description: '',
     },
+    {
+        title: 'Projetos em Realismo',
+        image: '/img/projects/project1.png',
+        description: '',
+    }
 ]
