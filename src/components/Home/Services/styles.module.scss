@@ -50,8 +50,10 @@
             gap: 20px;
             width: 350px;
 
-            &:hover {
-                transform: scale(1.05);
+            @media (hover: hover) and (pointer: fine) {
+                &:hover {
+                    transform: scale(1.05);
+                }
             }
 
             img {

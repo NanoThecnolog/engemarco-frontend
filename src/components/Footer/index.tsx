@@ -49,7 +49,7 @@ export default function Footer() {
             </div>
             <div className={styles.finalText}>
                 <p>
-                    Engemarco Engenharia @ Todos os Direitos Reservados
+                    @ 2025 Engemarco Engenharia. Compromisso com qualidade e excelência. Todos os Direitos Reservados.
                 </p>
             </div>
         </footer>

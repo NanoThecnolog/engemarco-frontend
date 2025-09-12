@@ -33,9 +33,11 @@ export default function Projects() {
                     )
                 }
             </div>
-            <div className={styles.buttonContainer}>
+            {
+                /*<div className={styles.buttonContainer}>
                 <Link href='/projects'>Ver mais projetos...</Link>
-            </div>
+            </div>*/
+            }
             <ModalProject project={project} isOpen={open} onClose={() => setOpen(false)} />
         </section>
     )

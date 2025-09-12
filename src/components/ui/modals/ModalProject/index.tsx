@@ -32,7 +32,9 @@ export default function ModalProject({ project, isOpen, onClose }: ModalProps) {
 
                     <div className={styles.content}>
                         <h2>{project.title}</h2>
-                        <p>Descrição do projeto:{project.description}</p>
+                        {
+                            //<p>Descrição do projeto:{project.description}</p>
+                        }
                     </div>
                 </div>
             }
