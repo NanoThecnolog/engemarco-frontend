@@ -38,6 +38,220 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        gap: 100px;
+
+        .infoText {
+            flex: 1;
+
+            h3 {
+                font-weight: 300;
+                font-size: 1.2rem;
+                line-height: 1.6;
+            }
+        }
+
+        .contactContainer {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+
+            .contactItem {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 10px;
+
+                p {
+                    font-size: 1rem;
+                    word-break: break-word;
+                }
+            }
+        }
+
+        // Responsividade
+        @media (max-width: 992px) {
+            gap: 50px;
+        }
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+            text-align: center;
+            gap: 2rem;
+
+            .contactContainer {
+                align-items: center;
+            }
+        }
+    }
+
+    .contentContainer {
+        display: flex;
+        gap: 2rem;
+        width: 100%;
+        max-width: 1100px;
+
+        @media (max-width: 768px) {
+            flex-direction: column;
+        }
+
+        .formContainer {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+
+            h3 {
+                color: #444;
+                font-size: 1.4rem;
+                text-align: center;
+            }
+
+            label {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+
+                h4 {
+                    font-size: 1rem;
+                    font-weight: 600;
+                    color: #444;
+                }
+
+                input,
+                textarea {
+                    padding: 0.8rem 1rem;
+                    border: 1px solid #ddd;
+                    border-radius: 8px;
+                    font-size: 1rem;
+
+                    &:focus {
+                        border-color: #0077ff;
+                        box-shadow: 0 0 0 2px rgba(0, 119, 255, 0.2);
+                        outline: none;
+                    }
+                }
+
+                textarea {
+                    height: 120px;
+                    resize: vertical;
+                    text-align: start;
+                }
+            }
+
+            .buttonContainer {
+                display: flex;
+                justify-content: flex-end;
+
+                @media (max-width: 480px) {
+                    justify-content: center;
+                }
+
+                button {
+                    padding: 0.8rem 2rem;
+                    border: none;
+                    border-radius: 8px;
+                    background: #0077ff;
+                    color: #fff;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: background 0.3s ease, transform 0.2s ease;
+
+                    &:hover {
+                        background: #005fcc;
+                        transform: translateY(-2px);
+                    }
+
+                    &:active {
+                        transform: translateY(0);
+                    }
+                }
+            }
+        }
+
+        .mapContainer {
+            flex: 1;
+            border-radius: 12px;
+            overflow: hidden;
+
+            iframe {
+                width: 100%;
+                height: 100%;
+                min-height: 400px;
+                border: none;
+            }
+
+            @media (max-width: 768px) {
+                min-height: 300px;
+            }
+        }
+    }
+
+    // Ajustes globais para telas pequenas
+    @media (max-width: 480px) {
+        padding: 2rem 1rem;
+
+        .title h1 {
+            font-size: 1.8rem;
+        }
+
+        .infoContainer {
+            margin-bottom: 50px;
+        }
+
+        .formContainer {
+            padding: 1.5rem;
+        }
+    }
+}
+
+
+/*.container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+        margin-bottom: 2rem;
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #222;
+            text-transform: uppercase;
+            text-align: center;
+            position: relative;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 60px;
+                height: 4px;
+                margin: 0.5rem auto 0;
+                background: #0077ff;
+                border-radius: 2px;
+            }
+        }
+    }
+
+    .infoContainer {
+        color: black;
+        width: 100%;
+        max-width: 1100px;
+        margin-bottom: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         //outline: 2px solid red;
         gap: 100px;
 
@@ -166,4 +380,4 @@
             }
         }
     }
-}
+}*/

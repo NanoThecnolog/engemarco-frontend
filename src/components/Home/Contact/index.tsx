@@ -1,8 +1,9 @@
 import { FormEvent, useState } from 'react'
 import styles from './styles.module.scss'
 import { MdEmail } from 'react-icons/md'
-import { FaPhoneAlt } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
 import { contact } from '@/common/variables/contact'
+import axios from 'axios'
 
 export default function Contacts() {
     const [name, setName] = useState<string>('')
@@ -10,9 +11,24 @@ export default function Contacts() {
     const [tel, setTel] = useState<string>('')
     const [message, setMessage] = useState<string>('')
 
-    const handleSubmit = (e: FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
+        //enviar os dados do formulario por email e apresentar uma mensagem de confirmação de envio para o usuário
         e.preventDefault()
-        return
+        try {
+            const response = await axios.post('/api/send-email',
+                {
+                    name,
+                    email,
+                    tel,
+                    message
+                }
+            )
+            const data = response.data
+            console.log('Resultado da requisição', data)
+            return
+        } catch (err) {
+            console.error(`Erro ao enviar formulario.`, err)
+        }
     }
     return (
         <section className={styles.container} id='contato'>
@@ -32,6 +48,10 @@ export default function Contacts() {
                         <FaPhoneAlt />
                         <p>{contact.phone}</p>
                     </div>
+                    <div className={styles.contactItem}>
+                        <FaMapMarkerAlt />
+                        <p>{contact.address}</p>
+                    </div>
                 </div>
             </div>
             <div className={styles.contentContainer}>
@@ -43,6 +63,8 @@ export default function Contacts() {
                             type="text"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
+                            placeholder='Digite seu nome*'
+                            required
                         />
                     </label>
                     <label>
@@ -51,6 +73,8 @@ export default function Contacts() {
                             type="text"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            placeholder='Digite um email válido*'
+                            required
                         />
                     </label>
                     <label>
@@ -59,6 +83,8 @@ export default function Contacts() {
                             type="text"
                             value={tel}
                             onChange={(e) => setTel(e.target.value)}
+                            placeholder='Digite um telefone válido*'
+                            required
                         />
                     </label>
                     <label>
@@ -66,6 +92,7 @@ export default function Contacts() {
                         <textarea
                             value={message}
                             onChange={(e) => setMessage(e.target.value)}
+
                         />
                     </label>
                     <div className={styles.buttonContainer}>
@@ -83,6 +110,7 @@ export default function Contacts() {
                     ></iframe>
                 </div>
             </div>
+
         </section>
     )
 }

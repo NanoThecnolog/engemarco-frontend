@@ -1,49 +1,54 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import nodemailer from "nodemailer";
-import mjml2html from "mjml";
-import fs from "fs";
-import path from "path";
+import { sendTo } from "@/common/variables/emailOptions";
+import { generateContactFormNotification } from "@/common/variables/generateHTML";
+
+
+const transporterOptions = {
+    host: process.env.SMTP_HOST,
+    port: process.env.SMTP_PORT ? Number(process.env.SMTP_PORT) : undefined,
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS
+}
+const missing = Object.entries(transporterOptions)
+    .filter(([_, value]) => !value)
+    .map(([key]) => key)
+
+if (missing.length > 0) {
+    console.error(`Erro: variáveis de ambiente faltando -> ${missing.join(', ')}`)
+    throw new Error('Falha na configuração do transporter SMTP')
+}
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method !== "POST") {
         return res.status(405).json({ message: "Método não permitido" });
     }
 
-    const { to, nome } = req.body;
+    const { name, email, tel, message } = req.body;
 
     try {
-        // 1. Carrega o template MJML
-        const templatePath = path.join(process.cwd(), "emails", "contato.mjml");
-        let mjmlTemplate = fs.readFileSync(templatePath, "utf8");
+        const html: string = generateContactFormNotification({ name, email, tel, message });
 
-        // 2. Substitui variáveis do template
-        mjmlTemplate = mjmlTemplate.replace("{{nome}}", nome);
-
-        // 3. Converte para HTML
-        const { html } = mjml2html(mjmlTemplate);
-
-        // 4. Configura o transporter do Nodemailer
         const transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST,
-            port: 587,
-            secure: true, // true se usar SSL
+            host: transporterOptions.host,
+            port: transporterOptions.port,
+            secure: transporterOptions.port === 465,
             auth: {
-                user: process.env.SMTP_USER,
-                pass: process.env.SMTP_PASS,
+                user: transporterOptions.user,
+                pass: transporterOptions.pass,
             },
         });
 
-        // 5. Envia o email
         await transporter.sendMail({
-            from: '"Engemarco Soluções" <contato@engemarcosolucoes.com>',
-            to,
-            subject: "Obrigado pelo contato!",
+            from: `"Engemarco Soluções em Engenharia" ${transporterOptions.user}`,
+            to: sendTo.email,
+            subject: "Contato recebido através do site",
             html,
         });
 
         return res.status(200).json({ message: "Email enviado com sucesso!" });
-    } catch (error) {
-        console.error("Erro ao enviar email:", error);
-        return res.status(500).json({ message: "Erro ao enviar email" });
+    } catch (err) {
+        console.error("Erro ao enviar email:", err);
+        return res.status(500).json({ message: "Erro ao enviar email", error: err });
     }
 }
