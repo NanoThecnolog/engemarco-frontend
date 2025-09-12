@@ -1,27 +1,27 @@
 export const projects = [
     {
-        title: 'Título do Projeto',
-        image: '/img/projects/project1.png',
+        title: 'Deck com Piscina',
+        image: '/img/projects/deck-piscina.jpeg',
         description: '',
     },
     {
-        title: 'Título do Projeto',
-        image: '/img/projects/project2.png',
+        title: 'Teste de Percussão de Fachadas',
+        image: '/img/projects/percussao-fachadas.jpeg',
         description: '',
     },
     {
-        title: 'Título do Projeto',
-        image: '/img/projects/project3.png',
+        title: 'Reforço Estrutural em Pilares',
+        image: '/img/projects/reforco-estrutural.jpeg',
         description: '',
     },
     {
-        title: 'Título do Projeto',
-        image: '/img/projects/project4.png',
+        title: 'Termografia de Trinca',
+        image: '/img/projects/termografia.jpeg',
         description: '',
     },
     {
-        title: 'Título do Projeto',
-        image: '/img/projects/project5.png',
+        title: 'Pintura de Fachadas',
+        image: '/img/projects/pintura-fachada.jpeg',
         description: '',
     },
 ]

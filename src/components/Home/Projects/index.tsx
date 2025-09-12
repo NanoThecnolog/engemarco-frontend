@@ -28,6 +28,7 @@ export default function Projects() {
                     projects.map((item, i) =>
                         <div key={i} className={styles.projectItem} onClick={() => handleClick(item)}>
                             <img src={item.image} alt={item.title} />
+                            <p>{item.title}</p>
                         </div>
                     )
                 }
