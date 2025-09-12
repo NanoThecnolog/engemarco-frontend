@@ -5,6 +5,8 @@
     align-items: center;
     //outline: 2px solid red;
     width: 100%;
+    gap: 50px;
+    padding: 100px 0;
 
     .text {
         text-align: center;
@@ -26,10 +28,28 @@
 
             img {
                 width: 400px;
+                height: 300px;
+                object-fit: cover;
+                object-position: center;
                 border-radius: .4rem;
                 box-shadow: 0 5px 15px rgba(0, 0, 0, .4);
             }
         }
+    }
+
+    .buttonContainer {
+        a {
+            background-color: var(--blue-soft);
+            color: var(--black);
+            padding: 20px 50px;
+            border-radius: 1rem;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        //margin-top: 50px;
     }
 
     @media (max-width: 1024px) {

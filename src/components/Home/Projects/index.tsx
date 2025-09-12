@@ -21,20 +21,19 @@ export default function Projects() {
     return (
         <section className={styles.container} id='projetos'>
             <div className={styles.text}>
-                <h1>Projetos Realistas</h1>
+                <h1>Projetos</h1>
             </div>
             <div className={styles.projectsContainer}>
                 {
                     projects.map((item, i) =>
                         <div key={i} className={styles.projectItem} onClick={() => handleClick(item)}>
                             <img src={item.image} alt={item.title} />
-                            <p>{item.title}</p>
                         </div>
                     )
                 }
             </div>
             <div className={styles.buttonContainer}>
-                <Link href=''>Ver mais...</Link>
+                <Link href='/projects'>Ver mais projetos...</Link>
             </div>
             <ModalProject project={project} isOpen={open} onClose={() => setOpen(false)} />
         </section>

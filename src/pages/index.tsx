@@ -15,7 +15,7 @@ import Contacts from "@/components/Home/Contact";
 export default function Home() {
   const [modalVisible, setModalVisible] = useState<boolean>(false)
 
-  const imgBGParallax = '/img/exemplo1.jpg';
+  const imgBGParallax = '/img/background/parallax-image1.jpeg';
 
   return (
     <>
