@@ -83,7 +83,7 @@ export default function Contacts() {
                             type="text"
                             value={tel}
                             onChange={(e) => setTel(e.target.value)}
-                            placeholder='Digite um telefone válido*'
+                            placeholder='21998765432'
                             required
                         />
                     </label>

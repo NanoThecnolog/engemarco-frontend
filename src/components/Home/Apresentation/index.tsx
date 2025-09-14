@@ -18,7 +18,8 @@ export default function Apresentation() {
             <div className={styles.content}>
                 <div className={styles.logomarca}>
                     <img src="/img/LOGO.png" alt="Logomarca Engemarco" />
-                    <h1>Engemarco LTDA</h1>
+                    <h1>Engemarco Soluções</h1>
+                    <p>Engenharia Legal e Diagnóstica</p>
                 </div>
                 <p>
                     Desde 2024, atuamos com qualidade, segurança e seriedade em obras, reformas, cálculos estruturais, avaliações de imóveis, perícias de engenharia civil e segurança do trabalho.

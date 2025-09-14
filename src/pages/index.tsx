@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>EngeMarco Soluções | Empresa de Engenharia Civil</title>
+        <title>EngeMarco Soluções | Empresa de Engenharia Civil Legal e Diagnóstica</title>
         <meta name="description" content="Somos uma empresa de Engenharia Civil especializada em avaliação de imóveis e perícias de engenharia." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/img/logomarcaredesenhada.png" />

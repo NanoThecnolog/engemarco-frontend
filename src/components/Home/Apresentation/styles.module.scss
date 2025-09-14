@@ -35,6 +35,33 @@
         max-width: 800px;
         text-align: center;
 
+        .logomarca {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2rem;
+
+            img {
+                max-width: 180px;
+                margin-bottom: 1rem;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+                font-weight: 700;
+                color: #fff;
+                margin-bottom: 0rem;
+                line-height: 1.2;
+            }
+
+            p {
+                font-size: 1.2rem;
+                font-weight: 400;
+                color: #f0f0f0;
+                margin: 0;
+            }
+        }
+
         h1 {
             font-size: 3rem;
             font-weight: 700;
