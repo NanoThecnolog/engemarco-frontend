@@ -11,7 +11,7 @@ export default function Services() {
                 {services.map((item, i) =>
                     <div key={i} className={styles.serviceItem}>
                         <img src={item.image} alt={item.title} />
-                        <h4>{item.title}</h4>
+                        <h2>{item.title}</h2>
                     </div>
                 )}
             </div>
