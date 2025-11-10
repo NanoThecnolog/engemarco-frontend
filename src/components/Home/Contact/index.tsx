@@ -24,12 +24,12 @@ export default function Contacts() {
                     message
                 }
             )
-            const data = response.data
-            console.log('Resultado da requisição', data)
-            toast.success(data.message)
+            //const data = response.data
+            //console.log('Resultado da requisição', data)
+            toast.success('Formulario enviado com sucesso')
             return
         } catch (err) {
-            console.error(`Erro ao enviar formulario.`, err)
+            //console.error(`Erro ao enviar formulario.`, err)
             toast.error("Erro ao enviar mensagem. Por favor, tente novamente mais tarde")
         }
     }
