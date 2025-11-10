@@ -4,6 +4,7 @@ import { MdEmail } from 'react-icons/md'
 import { FaMapMarkerAlt, FaPhoneAlt } from 'react-icons/fa'
 import { contact } from '@/common/variables/contact'
 import axios from 'axios'
+import { toast } from 'react-toastify'
 
 export default function Contacts() {
     const [name, setName] = useState<string>('')
@@ -25,9 +26,11 @@ export default function Contacts() {
             )
             const data = response.data
             console.log('Resultado da requisição', data)
+            toast.success(data.message)
             return
         } catch (err) {
             console.error(`Erro ao enviar formulario.`, err)
+            toast.error("Erro ao enviar mensagem. Por favor, tente novamente mais tarde")
         }
     }
     return (
