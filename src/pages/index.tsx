@@ -13,6 +13,7 @@ import Statistics from "@/components/Home/Statistics";
 import Contacts from "@/components/Home/Contact";
 import { NextSeo } from "next-seo";
 import { homeSEO } from "@/common/SEO/home";
+import Owner from "@/components/Home/Owner";
 
 export default function Home() {
   const [modalVisible, setModalVisible] = useState<boolean>(false)
@@ -39,6 +40,7 @@ export default function Home() {
           <Services />
           <Projects />
           <Customers />
+          <Owner />
           <Contacts />
         </div>
         {
