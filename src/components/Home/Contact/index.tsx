@@ -49,7 +49,7 @@ export default function Contacts() {
                     </div>
                     <div className={styles.contactItem}>
                         <FaPhoneAlt />
-                        {contact.phone.map((tel, index) => <p key={index}>{tel}</p>)}
+                        {contact.phone.map((tel, index) => <p key={index}>{tel} {index < contact.phone.length - 1 && '/'}</p>)}
                     </div>
                     <div className={styles.contactItem}>
                         <FaMapMarkerAlt />
