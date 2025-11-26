@@ -31,7 +31,7 @@ export default function Footer() {
                     </div>
                     <div className={styles.contactItem}>
                         <FaPhoneAlt />
-                        <p>{contact.phone}</p>
+                        {contact.phone.map((tel, index) => <p key={index}>{tel}</p>)}
                     </div>
                     <div className={styles.contactItem}>
                         <FaMapMarkerAlt />
